@@ -1,0 +1,152 @@
+/* Main Navbar background */
+.custom-navbar {
+  background: linear-gradient(90deg, #e9f2ff, #f7fbff);
+  padding: 0 20px;
+}
+
+/* Logo */
+.logo-text {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Center menu */
+.navbar-center {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* Menu links style */
+.nav-menu-link {
+  color: #1a3e75;
+  font-size: 1.1rem;
+  position: relative;
+  margin: 0 20px;
+  font-weight: 500;
+  transition: color 0.3s;
+  display: inline-block;
+}
+
+.nav-menu-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: #0d6efd;
+  transition: width 0.3s;
+}
+
+.nav-menu-link:hover {
+  color: #0b5ed7;
+}
+
+.nav-menu-link:hover::after {
+  width: 100%;
+}
+
+/* Search input wrapper */
+.search-input-wrapper {
+  position: relative;
+  width: 240px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 10px 40px 10px 15px;
+  border-radius: 50px;
+  border: 1px solid #ced4da;
+  outline: none;
+}
+
+.search-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6c757d;
+  font-size: 1rem;
+}
+
+/* Second Navbar (Premium Blur-Transparent + Golden hover) */
+.second-navbar {
+  background: rgba(25, 54, 109, 0.533); /* semi-transparent blue */
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+}
+
+.second-nav-link {
+  color: #f1f1f1;
+  font-weight: 600;
+  margin: 0 12px;
+  font-size: 1.05rem;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+}
+
+.second-nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 2px;
+  background: linear-gradient(90deg, #f9d923, #ffd700);
+  transition: width 0.4s ease;
+}
+
+.second-nav-link:hover {
+  color: #ffd700;
+  transform: translateY(-2px);
+}
+
+.second-nav-link:hover::after {
+  width: 80%;
+}
+
+
+/* Media query for 480px screens */
+@media (max-width: 480px) {
+  /* For main navbar - hide certain elements */
+  .navbar-center {
+    display: none;
+  }
+
+  /* Adjust search form */
+  .search-input-wrapper input {
+    width: 130px;
+  }
+
+  .navbar-collapse {
+    justify-content: space-between;
+  }
+
+  /* Show Navbar links in mobile */
+  .navbar-collapse .nav-link {
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  /* Adjust logo size on mobile */
+  .logo-text {
+    font-size: 1.2rem;
+  }
+
+  /* For second navbar */
+  .second-navbar .nav-link {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+}
+
+/* For bigger screens, show the navbar items properly */
+@media (min-width: 481px) {
+  .second-navbar .nav-link {
+    padding: 12px 15px;
+  }
+}

@@ -1,0 +1,60 @@
+/* Animation import from animate.css */
+@import url('https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css');
+
+.banner-img {
+  height: 450px;
+  object-fit: cover;
+}
+
+.text-shadow {
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
+}
+
+.category-card:hover {
+  transform: translateY(-5px);
+  transition: transform 0.3s ease;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.category-img {
+  height: 200px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.category-card:hover .category-img {
+  transform: scale(1.1);
+}
+
+.category-button {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.category-button:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.product-img {
+  height: 250px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img {
+  transform: scale(1.05);
+}
+
+.product-button {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.product-button:hover {
+  background-color: #28a745;
+  transform: translateY(-5px);
+}
+
+footer {
+  font-size: 1rem;
+  background-color: #343a40;
+}
