@@ -1,0 +1,53 @@
+/* src/pages/ProfilePage.css */
+
+.profile-page-container {
+  padding: 50px 0;
+  background-color: #f9f9f9;
+}
+
+.profile-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section .form-group {
+  margin-bottom: 20px;
+}
+
+.profile-section .btn-secondary {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+}
+
+.order-history-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.order-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-list li {
+  padding: 8px;
+  border-bottom: 1px solid #ddd;
+}
+
+.add-to-cart-section {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.add-to-cart-section .btn-primary {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+}
