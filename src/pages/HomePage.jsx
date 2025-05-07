@@ -1,7 +1,7 @@
 // src/pages/HomePage.jsx
 import React, { useEffect } from 'react';
 import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
-import { FaFacebookF, FaTwitter, FaInstagram, FaYoutube, FaPinterest } from 'react-icons/fa';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import '../Css/HomePage.css';
@@ -66,34 +66,52 @@ const HomePage = () => {
         </Row>
       </Container>
 
-      <footer className="footer text-center py-5 mt-5" style={{ backgroundColor: '#2a4d2e', color: 'white' }}>
-      <div className="container">
-        <h4 className="text-uppercase mb-3">DairyDelight - Your Freshness Delivered</h4>
-        <p className="mb-4" style={{ fontSize: '1.1rem', lineHeight: '1.7' }}>
-          At DairyDelight, we bring you premium dairy products from the heart of nature to your table. Enjoy the goodness of fresh milk, yogurt, and more—carefully sourced and delivered with care.
-        </p>
-        <p className="mb-4">
-          <span style={{ fontWeight: '500', fontSize: '1.2rem' }}>&copy; 2025 DairyDelight. All Rights Reserved.</span>
-        </p>
-
-        <div className="social-icons mt-4">
-          <a href="#" className="social-icon" style={{ fontSize: '2.5em' }}>
-            <FaFacebookF style={{ color: '#3b5998' }} />
-          </a>
-          <a href="#" className="social-icon" style={{ fontSize: '2.5em' }}>
-            <FaTwitter style={{ color: '#1da1f2' }} />
-          </a>
-          <a href="#" className="social-icon" style={{ fontSize: '2.5em' }}>
-            <FaInstagram style={{ color: '#e4405f' }} />
-          </a>
-          <a href="#" className="social-icon" style={{ fontSize: '2.5em' }}>
-            <FaYoutube style={{ color: '#ff0000' }} />
-          </a>
-          <a href="#" className="social-icon" style={{ fontSize: '2.5em' }}>
-            <FaPinterest style={{ color: '#e60023' }} />
-          </a>
-        </div>
-      </div>
+      <footer className="footer-section">
+      <Container>
+        <Row className="footer-top">
+          <Col md={3}>
+            <h5>About Us</h5>
+            <p>
+              My Dairy Shop offers fresh and quality dairy products delivered to your doorstep. Our aim is to promote healthy living with locally sourced milk, cheese, butter, and more.
+            </p>
+          </Col>
+          <Col md={3}>
+            <h5>Quick Links</h5>
+            <ul>
+              <li><a href="/products">Our Products</a></li>
+              <li><a href="/offers">Today’s Offers</a></li>
+              <li><a href="/login">Login</a></li>
+              <li><a href="/shopregister">Become a Seller</a></li>
+            </ul>
+          </Col>
+          <Col md={3}>
+            <h5>Categories</h5>
+            <ul>
+              <li><a href="/category/milk">Milk</a></li>
+              <li><a href="/category/cheese">Cheese</a></li>
+              <li><a href="/category/butter">Butter</a></li>
+              <li><a href="/category/curd">Curd</a></li>
+            </ul>
+          </Col>
+          <Col md={3}>
+            <h5>Contact</h5>
+            <p>Email: support@mydairyshop.com</p>
+            <p>Phone: +91 98765 43210</p>
+            <div className="footer-social-icons">
+              <a href="#"><FaFacebookF /></a>
+              <a href="#"><FaInstagram /></a>
+              <a href="#"><FaTwitter /></a>
+              <a href="#"><FaLinkedinIn /></a>
+            </div>
+          </Col>
+        </Row>
+        <hr />
+        <Row className="text-center mt-3">
+          <Col>
+            <p className="mb-0 ">&copy; 2025 My Dairy Shop. All rights reserved.</p>
+          </Col>
+        </Row>
+      </Container>
     </footer>
 
     </Container>

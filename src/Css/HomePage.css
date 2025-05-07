@@ -13,54 +13,72 @@ body {
   color:#d8c304 !important;
 }
 
-.footer h4 {
-  font-size: 1.8rem;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  animation: fadeInUp 1s ease-out forwards;
+.footer-section {
+  background: #1c4622;
+  color:#d8c304 !important;
+  padding: 50px 0 20px;
+  font-family: 'Segoe UI', sans-serif;
+  position: relative;
+  z-index: 1;
 }
 
-.footer p {
-  font-size: 1.1rem;
-  line-height: 1.7;
-  animation: fadeInUp 1s ease-out forwards;
+.footer-top h5 {
+  font-size: 20px;
+  color: #ffc107;
+  margin-bottom: 15px;
+  position: relative;
 }
 
-.footer .social-icons {
-  display: flex;
+.footer-top p,
+.footer-top li {
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+.footer-top ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-top ul li {
+  margin-bottom: 8px;
+}
+
+.footer-top ul li a {
+  color:#d8c304 !important;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-top ul li a:hover {
+  color: #ffc107;
+  padding-left: 5px;
+}
+
+.footer-social-icons a {
+  display: inline-flex;
   justify-content: center;
-  gap: 20px;
-  animation: fadeInUp 1s ease-out forwards;
+  align-items: center;
+  background: #ffc107;
+  color: #003049;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  border-radius: 50%;
+  font-size: 18px;
+  transition: all 0.3s ease;
 }
 
-.footer .social-icon {
-  transition: transform 0.3s ease, color 0.3s ease;
+.footer-social-icons a:hover {
+  background: #253a01;
+   color:#d8c304 !important;
+  transform: scale(1.1);
 }
 
-.footer .social-icon:hover {
-  transform: scale(1.2);
-  color: white;
+hr {
+  border-top: 1px solid #d8c304;
+  margin-top: 30px;
 }
-
-.footer .social-icon:hover > i {
-  transform: scale(1.2);
-  transition: transform 0.3s ease;
-}
-
-@keyframes fadeInUp {
-  0% {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
 
 
 /* Category Cards */
