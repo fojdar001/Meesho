@@ -1,8 +1,9 @@
 .second-navbar {
-    background: rgba(0, 0, 0, 0.4);  /* transparent black overlay */
+    background:#2a420069;  /* transparent black overlay */
   backdrop-filter: blur(6px);     /* glassy effect */
   position: relative;
   z-index: 15;   
+  border: none;
   }
   
   .second-nav-link {
@@ -11,3 +12,5 @@
     font-size: 1.1rem;
     transition: color 0.3s ease;
   }
+
+ 

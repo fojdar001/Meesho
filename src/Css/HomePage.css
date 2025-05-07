@@ -1,42 +1,75 @@
 
 
-/* Global Styles */
 body {
   font-family: 'Poppins', sans-serif;
   background: linear-gradient(to right, #fdfcdc, #ffeaa7);
+ 
 
 }
 
-/* Swiper Banner */
-.banner-slide img {
-  width: 100%;
-  height: 500px;
-  object-fit: cover;
-  border-radius: 0;
+
+.footer {
+  background-color: #1c4622 !important; /* Dark green for modern look */
+  color:#d8c304 !important;
 }
 
-.banner-caption {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.footer h4 {
+  font-size: 1.8rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.footer p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+.footer .social-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.footer .social-icon:hover {
+  transform: scale(1.2);
   color: white;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 20px 30px;
-  border-radius: 12px;
-  animation: fadeInUp 1s ease-in-out;
 }
 
-.text-shadow {
-  text-shadow: 2px 2px 5px rgba(0,0,0,0.6);
+.footer .social-icon:hover > i {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
 }
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
 
 /* Category Cards */
 /* Category Section */
 .category-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
+  background:#dbc92069;  /* transparent black overlay */
+  backdrop-filter: blur(6px); 
 }
 
 .category-card:hover {
@@ -44,12 +77,17 @@ body {
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
 }
 
+.home-text{
+  color: #2a4200 !important;
+  font-weight: 800 !important;
+}
 .category-img {
   height: 180px;
   object-fit: cover;
   width: 100%;
   transition: transform 0.4s ease;
   border-radius: 12px 12px 0 0;
+  
 }
 
 .category-card:hover .category-img {
@@ -58,19 +96,28 @@ body {
 
 .category-button {
   margin-top: 10px;
-  border-radius: 20px;
+  border-radius: 15px;
   transition: all 0.3s ease;
+  background-color: #2a4d2e;
+  border: none;
+  cursor: pointer;
+  color: #d8c304;
+  font-weight: 600;
 }
 
 .category-button:hover {
-  background-color: #ffeb3b;
-  color: #fff;
+  background-color: #2a4d2e;
+  color: #d8c304;
+  transform: translateY(-3px)
+  
 }
 
 /* Trending Product Cards */
 .product-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   border-radius: 12px;
+  background:#dbc92069;  /* transparent black overlay */
+  backdrop-filter: blur(6px); 
 }
 
 .product-card:hover {
@@ -86,16 +133,19 @@ body {
 }
 
 .product-button {
-  border-radius: 25px;
-  padding: 8px 20px;
-  font-weight: 500;
-  transition: background-color 0.3s ease;
+  border-radius: 15px;
+  transition: all 0.3s ease;
+  background-color: #2a4d2e;
+  border: none;
+  cursor: pointer;
+  color: #d8c304;
+  font-weight: 600;
 }
 
 .product-button:hover {
-  background-color: #ffeb3b;
-  border-color: #ffeb3b;
-  color: #fff;
+  background-color: #2a4d2e;
+  color: #d8c304;
+  transform: translateY(-4px)
 }
 
 /* Responsive Text Headings */

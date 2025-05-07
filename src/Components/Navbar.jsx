@@ -12,39 +12,40 @@ const NavigationBar = () => {
   return (
     <>
       {/* MAIN NAVBAR */}
-      <Navbar expand="lg" className="shadow-sm sticky-top py-3 custom-navbar">
+      <Navbar expand="lg" className=" shadow-sm sticky-top py-3 custom-navbar">
         <Container fluid className="d-flex align-items-center justify-content-between">
           <div className="d-flex align-items-center">
-            <Navbar.Brand as={Link} to="/" className="fw-bold text-primary fs-4 me-2 logo-text">
+            <Navbar.Brand as={Link} to="/" className="fw-bold  fs-4 me-2 logo-text">
               My Dairy Shop
             </Navbar.Brand>
             <Nav.Link as={Link} to="/cart" className="p-0 ms-2">
-              <BsCart3 size={26} className="text-primary" />
+              <BsCart3 size={26} className="logo-icon" />
             </Nav.Link>
           </div>
 
-          {/* Toggle Button for Mobile View */}
+ 
+
           <Navbar.Toggle aria-controls="navbar-nav" />
+          <Navbar.Collapse id="navbar-nav">
+  <Nav className="ms-auto d-flex flex-column flex-lg-row align-items-start align-items-lg-center navbar-center">
+    <Nav.Link as={Link} to="/products" className="nav-menu-link">
+      Products
+    </Nav.Link>
+    <Nav.Link as={Link} to="/login" className="nav-menu-link">
+      Login
+    </Nav.Link>
+    <Nav.Link as={Link} to="/shopregister" className="nav-menu-link">
+      Shopkeeper
+    </Nav.Link>
+    <Nav.Link as={Link} to="/profile" className="nav-menu-link">
+      Profile
+    </Nav.Link>
+  </Nav>
+</Navbar.Collapse>
 
-          <Navbar.Collapse id="navbar-nav" className="d-flex align-items-center justify-content-between">
-            {/* Main Navigation Links */}
-            <Nav className="navbar-center">
-              <Nav.Link as={Link} to="/products" className="nav-menu-link">
-                Products
-              </Nav.Link>
-              <Nav.Link as={Link} to="/login" className="nav-menu-link">
-                Login
-              </Nav.Link>
-              <Nav.Link as={Link} to="/shopregister" className="nav-menu-link">
-                Shopkeeper
-              </Nav.Link>
-              <Nav.Link as={Link} to="/profile" className="nav-menu-link">
-                Profile
-              </Nav.Link>
-            </Nav>
 
-            {/* Search Form */}
-            <Form className="d-flex align-items-center ms-3">
+          {/* Search Form */}
+  <Form className="d-flex align-items-center ms-3">
               <div className="search-input-wrapper">
                 <input
                   type="text"
@@ -53,11 +54,10 @@ const NavigationBar = () => {
                 />
                 <BsSearch className="search-icon" />
               </div>
-              <Button variant="primary" className="rounded-pill ms-2">
+              {/* <Button variant="warning" className=" text-success rounded-pill ms-3">
                 Search
-              </Button>
+              </Button> */}
             </Form>
-          </Navbar.Collapse>
         </Container>
       </Navbar>
 

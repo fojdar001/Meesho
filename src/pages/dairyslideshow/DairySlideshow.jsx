@@ -1,55 +1,55 @@
-// src/components/DairySlideshow.jsx
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
+import React, { useEffect, useState } from "react";
 import "./DairySlideshow.css";
 
 const slides = [
   {
-    image: "https://www.boldsky.com/img/2015/08/05-1438771364-cover.jpg",
+    image: "https://img.freepik.com/premium-photo/bottle-glass-milk-grass-field_929907-3520.jpg",
     title: "Fresh Milk Delivered Daily",
     subtitle: "From local farms to your doorstep"
   },
   {
-    image: "https://th.bing.com/th/id/OIP.CHWl1Yy9L2IQQPPhe9yJjAHaE8?rs=1&pid=ImgDetMain",
+    image: "https://cdn-prod.medicalnewstoday.com/content/images/articles/321/321707/ghee-butter-in-glass-jar-with-wooden-spoon.jpg",
     title: "Pure Butter & Ghee",
     subtitle: "100% Natural and Homemade Taste"
   },
   {
-    image: "https://img.lb.wbmdstatic.com/vim/live/webmd/consumer_assets/site_images/articles/health_tools/how_to_follow_low_residue_diet_slideshow/493ss_getty_rf_dairy.jpg?resize=339px:*&output-quality=100",
+    image: "https://images.squarespace-cdn.com/content/v1/5eb43938f468c330e7d8d665/1633610695806-0M8I2NMZNNLLQ7DZOH0D/cheese-curds.jpg",
     title: "Organic Curd & Cheese",
     subtitle: "Healthy, Creamy, Delicious"
   }
 ];
 
-const DairySlideshow = () => {
+const DairyBanner = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [fade, setFade] = useState(true);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setFade(false); // reset animation
+      setTimeout(() => {
+        setCurrentIndex((prevIndex) =>
+          prevIndex === slides.length - 1 ? 0 : prevIndex + 1
+        );
+        setFade(true); // trigger animation again
+      }, 300); // slight delay for re-animation
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const { image, title, subtitle } = slides[currentIndex];
+
   return (
-    <div className="dairy-slideshow">
-      <Swiper
-        modules={[Autoplay, Pagination, Navigation]}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
-        pagination={{ clickable: true }}
-        navigation
-        loop
-        className="dairy-swiper"
-      >
-        {slides.map((slide, index) => (
-          <SwiperSlide key={index}>
-            <div className="slide-container">
-              <img src={slide.image} alt={slide.title} />
-              <div className="slide-caption">
-                <h2>{slide.title}</h2>
-                <p>{slide.subtitle}</p>
-              </div>
-            </div>
-          </SwiperSlide>
-        ))}
-      </Swiper>
+    <div
+      className="dairy-banner"
+      style={{ backgroundImage: `url(${image})` }}
+    >
+      <div className={`banner-text ${fade ? "fade-in" : ""}`}>
+        <h2>{title}</h2>
+        <p>{subtitle}</p>
+      </div>
     </div>
   );
 };
 
-export default DairySlideshow;
+export default DairyBanner;
