@@ -1,76 +1,63 @@
 // src/pages/HomePage.jsx
-import React from 'react';
-import { Container, Row, Col, Card, Button, Badge, Carousel } from 'react-bootstrap';
-import "../Css/HomePage.css";
-
+import React, { useEffect } from 'react';
+import { Container, Row, Col, Card, Button, Badge } from 'react-bootstrap';
+import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import '../Css/HomePage.css';
 
 const HomePage = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1000, once: true });
+  }, []);
+
   const categories = [
-    { name: 'Dairy Products', img: 'https://via.placeholder.com/300x200?text=Dairy' },
-    { name: 'Grocery', img: 'https://via.placeholder.com/300x200?text=Grocery' },
-    { name: 'Bakery', img: 'https://via.placeholder.com/300x200?text=Bakery' },
-    { name: 'Fruits', img: 'https://via.placeholder.com/300x200?text=Fruits' },
+    { name: 'Dairy Products', img: 'https://th.bing.com/th/id/OIP.fw501qONWWjVA7u83AGM4AHaDt?w=800&h=400&rs=1&pid=ImgDetMain' },
+    { name: 'Grocery', img: 'https://th.bing.com/th/id/OIP.iod6wdES8i0B1iaduGpAuAHaE8?rs=1&pid=ImgDetMain' },
+    { name: 'Bakery', img: 'https://th.bing.com/th/id/OIP.UQelnFFX7vihRqgND4YzUQHaGV?rs=1&pid=ImgDetMain' },
+    { name: 'Fruits', img: 'https://www.healthyeating.org/images/default-source/home-0.0/nutrition-topics-2.0/general-nutrition-wellness/2-2-2-3foodgroups_fruits_detailfeature.jpg?sfvrsn=64942d53_4' },
   ];
 
   const featuredProducts = [
-    { name: 'Milk 1L', price: 55, img: 'https://via.placeholder.com/400x300?text=Milk' },
-    { name: 'Bread', price: 30, img: 'https://via.placeholder.com/400x300?text=Bread' },
-    { name: 'Paneer 200g', price: 80, img: 'https://via.placeholder.com/400x300?text=Paneer' },
+    { name: 'Milk 1L', price: 55, img: 'https://cdn-prod.medicalnewstoday.com/content/images/articles/296/296564/milk.jpg' },
+    { name: 'Bread', price: 30, img: 'https://th.bing.com/th/id/R.0895485191a815489da2cc7214ba5015?rik=Vp0Wq5y7sgTS8g&riu=http%3a%2f%2ffillyourplate.org%2fblog%2fwp-content%2fuploads%2f2017%2f09%2fseveral-slices-of-whole-wheat-bread-that-had-been-set-atop-a-green-plate.jpg&ehk=BM86qsCfUd516rbs49OBI3CSMI2cyJNd%2bbPv%2fpkq%2bSI%3d&risl=&pid=ImgRaw&r=0' },
+    { name: 'Paneer 200g', price: 80, img: 'https://th.bing.com/th/id/OIP.wL7yMxuofXA32s7c1GXkPgHaD4?rs=1&pid=ImgDetMain' },
   ];
 
   return (
-    <Container fluid className="p-0">
-      {/* Slideshow Banner */}
-      <Carousel fade interval={1500}>
-        <Carousel.Item>
-          <img
-            className="d-block w-100 banner-img"
-            src="https://images.unsplash.com/photo-1556910096-6f5e88fb3f05?fit=crop&w=1350&q=80"
-            alt="First slide"
-          />
-          <Carousel.Caption>
-            <h1 className="fw-bold text-shadow animate__animated animate__fadeIn">🛍️ Big Sale Today!</h1>
-            <p className="animate__animated animate__fadeIn animate__delay-1s">Shop your daily essentials at best prices</p>
-            <Button variant="light" className="animate__animated animate__fadeIn animate__delay-2s">Shop Now</Button>
-          </Carousel.Caption>
-        </Carousel.Item>
-        {/* Additional slides as per previous code */}
-      </Carousel>
-
-      {/* Categories */}
-      <Container className="mt-5">
-        <h3 className="mb-4 text-center">🛒 Shop by Categories</h3>
+    <Container fluid className="p-0 homepage-bg">
+      <Container className="mt-1">
+        <h3 className=" home-text mb-4 text-center section-title" data-aos="fade-down">Shop by Categories</h3>
         <Row>
           {categories.map((cat, idx) => (
-            <Col md={3} sm={6} xs={12} key={idx} className="mb-4">
+            <Col md={3} sm={6} xs={12} key={idx} className="mb-4" data-aos="zoom-in">
               <Card className="h-100 shadow-sm border-0 category-card">
                 <div className="overflow-hidden rounded">
                   <Card.Img variant="top" src={cat.img} className="category-img" />
                 </div>
                 <Card.Body className="text-center">
-                  <Card.Title className="fw-bold">{cat.name}</Card.Title>
-                  <Button variant="outline-primary" size="sm" className="category-button">Explore</Button>
+                  <Card.Title className="fw-bold category-text">{cat.name}</Card.Title>
+                  <Button className="category-button">Explore</Button>
                 </Card.Body>
               </Card>
             </Col>
           ))}
         </Row>
 
-        {/* Featured Products */}
-        <h3 className="mb-4 text-center">🔥 Trending Products</h3>
+        <h3 className=" home-text mb-4 text-center section-title" data-aos="fade-down"> Trending Products</h3>
         <Row>
           {featuredProducts.map((item, idx) => (
-            <Col md={4} sm={6} xs={12} key={idx} className="mb-4">
+            <Col md={4} sm={6} xs={12} key={idx} className="mb-4" data-aos="fade-up">
               <Card className="h-100 shadow-sm border-0 product-card">
                 <div className="position-relative">
                   <Card.Img variant="top" src={item.img} className="product-img" />
                   <Badge bg="danger" className="position-absolute top-0 end-0 m-2">Hot</Badge>
                 </div>
                 <Card.Body>
-                  <Card.Title>{item.name}</Card.Title>
+                  <Card.Title className="product-name">{item.name}</Card.Title>
                   <Card.Text className="text-success fs-5 fw-bold">₹{item.price}</Card.Text>
                   <div className="d-grid">
-                    <Button variant="primary" className="product-button">Buy Now</Button>
+                    <Button className="product-button">Buy Now</Button>
                   </div>
                 </Card.Body>
               </Card>
@@ -78,11 +65,6 @@ const HomePage = () => {
           ))}
         </Row>
       </Container>
-
-      {/* Footer */}
-      <footer className="bg-dark text-white text-center py-4 mt-5">
-        <p className="mb-0">&copy; 2025 Meesho Clone. All rights reserved.</p>
-      </footer>
     </Container>
   );
 };

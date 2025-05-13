@@ -1,12 +1,17 @@
 /* Main Navbar background */
 .custom-navbar {
-  background: linear-gradient(90deg, #e9f2ff, #f7fbff);
+  background: #2a4d2e;
   padding: 0 20px;
+  box-shadow: 0px 0px 20px #162201 !important;
 }
 
 /* Logo */
 .logo-text {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color:#e6cf08 ;
+}
+.logo-icon{
+  color: #e6cf08;
 }
 
 /* Center menu */
@@ -18,11 +23,11 @@
 
 /* Menu links style */
 .nav-menu-link {
-  color: #1a3e75;
+  color: #e6cf08;
   font-size: 1.1rem;
   position: relative;
   margin: 0 20px;
-  font-weight: 500;
+  font-weight: 600;
   transition: color 0.3s;
   display: inline-block;
 }
@@ -33,13 +38,13 @@
   left: 0;
   bottom: -4px;
   width: 0%;
-  height: 2px;
-  background-color: #0d6efd;
+  height: 3px;
+  background-color: #d8c304;
   transition: width 0.3s;
 }
 
 .nav-menu-link:hover {
-  color: #0b5ed7;
+  color: #d8c304;
 }
 
 .nav-menu-link:hover::after {
@@ -50,14 +55,17 @@
 .search-input-wrapper {
   position: relative;
   width: 240px;
+  background: transparent;
+  color: #d8c304;
 }
 
 .search-input {
   width: 100%;
-  padding: 10px 40px 10px 15px;
+  padding: 9px 40px 9px 20px;
   border-radius: 50px;
-  border: 1px solid #ced4da;
+  border: 2px solid #d8c304;
   outline: none;
+  background: transparent;
 }
 
 .search-icon {
@@ -65,10 +73,14 @@
   right: 12px;
   top: 50%;
   transform: translateY(-50%);
-  color: #6c757d;
-  font-size: 1rem;
+  color: #d8c304;
+  font-size: 1.5rem;
+  
 }
-
+.search-input::placeholder{
+  color: #d8c304;
+  font-weight: 600;
+}
 /* Second Navbar (Premium Blur-Transparent + Golden hover) */
 .second-navbar {
   background: rgba(25, 54, 109, 0.533); /* semi-transparent blue */
@@ -101,52 +113,10 @@
 }
 
 .second-nav-link:hover {
-  color: #ffd700;
+  color: #2a4d2e;
   transform: translateY(-2px);
 }
 
 .second-nav-link:hover::after {
   width: 80%;
-}
-
-
-/* Media query for 480px screens */
-@media (max-width: 480px) {
-  /* For main navbar - hide certain elements */
-  .navbar-center {
-    display: none;
-  }
-
-  /* Adjust search form */
-  .search-input-wrapper input {
-    width: 130px;
-  }
-
-  .navbar-collapse {
-    justify-content: space-between;
-  }
-
-  /* Show Navbar links in mobile */
-  .navbar-collapse .nav-link {
-    padding: 8px 0;
-    font-size: 14px;
-  }
-
-  /* Adjust logo size on mobile */
-  .logo-text {
-    font-size: 1.2rem;
-  }
-
-  /* For second navbar */
-  .second-navbar .nav-link {
-    padding: 8px 10px;
-    font-size: 12px;
-  }
-}
-
-/* For bigger screens, show the navbar items properly */
-@media (min-width: 481px) {
-  .second-navbar .nav-link {
-    padding: 12px 15px;
-  }
 }
